@@ -36,11 +36,9 @@ const tutorialSteps = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
-    setIsVisible(true);
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % 3);
     }, 5000);
@@ -184,9 +182,11 @@ export default function Home() {
                   poster={tutorialSteps[activeStep].image}
                 />
               ) : (
-                <img
+                <Image
                   src={tutorialSteps[activeStep].image}
                   alt={tutorialSteps[activeStep].title}
+                  width={400}
+                  height={225}
                   className="rounded-2xl w-full h-full object-cover bg-indigo-950"
                 />
               )}
@@ -307,9 +307,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-gradient-to-br from-white to-indigo-50 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-xl overflow-hidden border border-indigo-100 dark:border-indigo-900"
-        >
+              >
                 <div className="aspect-w-16 aspect-h-9">
-          <Image
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     width={400}
@@ -319,7 +319,7 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
                     {testimonial.name}
@@ -364,7 +364,7 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
-    </div>
+        </div>
       </section>
     </main>
   );

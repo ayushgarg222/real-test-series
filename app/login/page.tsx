@@ -105,7 +105,7 @@ export default function Login() {
               </div>
               <div className="relative flex justify-center text-sm">
                 <span className="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400">
-                  Don't have an account?
+                  Don&apos;t have an account?
                 </span>
               </div>
             </div>

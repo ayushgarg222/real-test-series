@@ -18,7 +18,6 @@ export default function Register() {
 
   const [step, setStep] = useState(1);
   const [otp, setOtp] = useState('');
-  const [showOtpInput, setShowOtpInput] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -32,7 +31,6 @@ export default function Register() {
     e.preventDefault();
     if (step === 1) {
       // Send OTP
-      setShowOtpInput(true);
       setStep(2);
     } else if (step === 2) {
       // Verify OTP and complete registration
