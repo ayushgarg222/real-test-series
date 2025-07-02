@@ -3,8 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import React, { Suspense } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
 
 export const metadata: Metadata = {
   title: "Real Test Series - Right Evaluation and Assessment for Learning",
@@ -18,11 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800`}>
-        <div className="flex flex-col min-h-screen">
+      <body className={`${inter.className} min-h-screen bg-[var(--background-gradient)] text-[var(--foreground)]`}>
+        <div className="flex flex-col min-h-screen relative">
           <Navbar />
           <main className="flex-grow">
-        {children}
+            <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
           </main>
           <Footer />
         </div>

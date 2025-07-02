@@ -1,12 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -18,12 +28,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-lg fixed w-full z-50">
+    <nav className="bg-cream-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">RTS</span>
+              <span className="text-2xl font-bold text-gray-800 dark:text-white">RTS</span>
             </Link>
           </div>
 
@@ -35,8 +45,8 @@ const Navbar = () => {
                 href={item.path}
                 className={`${
                   pathname === item.path
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    ? 'text-purple-700 dark:text-purple-400'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'
                 } px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 {item.name}
@@ -45,13 +55,13 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               <Link
                 href="/login"
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 px-3 py-2 text-sm font-medium"
               >
                 Login
               </Link>
               <Link
                 href="/register"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="btn-primary px-4 py-2 text-sm font-bold"
               >
                 Register
               </Link>
@@ -62,7 +72,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {!isMenuOpen ? (
@@ -89,25 +99,25 @@ const Navbar = () => {
                 href={item.path}
                 className={`${
                   pathname === item.path
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                    ? 'text-purple-700 dark:text-purple-400'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400'
                 } block px-3 py-2 text-base font-medium`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+            <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-800">
               <Link
                 href="/login"
-                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
               </Link>
               <Link
                 href="/register"
-                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                className="block px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Register

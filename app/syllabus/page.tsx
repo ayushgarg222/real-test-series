@@ -184,13 +184,13 @@ export default function Syllabus() {
   const currentSyllabus = syllabi.find((s) => s.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-cream-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Syllabus
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-xl text-gray-700">
             Comprehensive syllabus coverage for {activeCategory} preparation
           </p>
         </div>
@@ -199,24 +199,24 @@ export default function Syllabus() {
         <div className="flex justify-center mb-8">
           <div className="inline-flex rounded-md shadow-sm">
             <button
-              type="button"
               onClick={() => setActiveCategory('NEET')}
-              className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
-                activeCategory === 'NEET'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-              }`}
+              className={`px-6 py-3 rounded-l-lg text-sm font-medium transition-all duration-200
+                ${
+                  activeCategory === 'NEET'
+                    ? 'bg-purple-600 text-white shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-cream-100'
+                }`}
             >
               NEET
             </button>
             <button
-              type="button"
               onClick={() => setActiveCategory('JEE')}
-              className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
-                activeCategory === 'JEE'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-              }`}
+              className={`px-6 py-3 rounded-r-lg text-sm font-medium transition-all duration-200
+                ${
+                  activeCategory === 'JEE'
+                    ? 'bg-purple-600 text-white shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-cream-100'
+                }`}
             >
               JEE
             </button>
@@ -228,19 +228,15 @@ export default function Syllabus() {
           {currentSyllabus?.subjects.map((subject) => (
             <div
               key={subject.name}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+              className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden"
             >
+              <div className="px-6 py-4 bg-cream-100 border-b border-gray-200">
+                <h2 className="text-xl font-bold text-purple-700">{subject.name}</h2>
+              </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  {subject.name}
-                </h3>
-                <ul className="space-y-2">
-                  {subject.topics.map((topic, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start text-gray-600 dark:text-gray-400"
-                    >
-                      <span className="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                <ul className="list-disc list-inside space-y-2">
+                  {subject.topics.map((topic) => (
+                    <li key={topic} className="text-gray-700">
                       {topic}
                     </li>
                   ))}
@@ -252,7 +248,7 @@ export default function Syllabus() {
 
         {/* Note */}
         <div className="mt-12 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-600">
             Note: This syllabus is based on the latest exam pattern and may be updated periodically.
             Please check the official website for any changes.
           </p>

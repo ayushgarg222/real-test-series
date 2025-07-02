@@ -78,13 +78,13 @@ export default function FAQ() {
     : faqs.filter((faq) => faq.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
+    <div className="min-h-screen bg-cream-50 pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="text-xl text-gray-700">
             Find answers to common questions about Real Test Series
           </p>
         </div>
@@ -97,8 +97,8 @@ export default function FAQ() {
               onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                 activeCategory === category
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                  ? 'bg-purple-600 text-white shadow-md'
+                  : 'bg-white text-gray-700 hover:bg-cream-100 border border-gray-200'
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -111,19 +111,19 @@ export default function FAQ() {
           {filteredFaqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+              className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
             >
               <button
                 className="w-full px-6 py-4 text-left focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-medium text-gray-900">
                     {faq.question}
                   </h3>
                   <span className="ml-6 flex-shrink-0">
                     <svg
-                      className={`h-6 w-6 transform transition-transform duration-200 ${
+                      className={`h-6 w-6 transform transition-transform duration-200 text-gray-400 ${
                         openIndex === index ? 'rotate-180' : ''
                       }`}
                       fill="none"
@@ -142,7 +142,7 @@ export default function FAQ() {
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-4">
-                  <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
+                  <p className="text-gray-700">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -151,12 +151,12 @@ export default function FAQ() {
 
         {/* Contact Support */}
         <div className="mt-12 text-center">
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-gray-700 mb-4">
             Still have questions? We're here to help!
           </p>
           <a
             href="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-200"
+            className="inline-block bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors duration-200 shadow-md"
           >
             Contact Support
           </a>
