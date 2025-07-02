@@ -73,9 +73,11 @@ export default function Home() {
           </div>
           {/* Right: Illustration or Image */}
           <div className="flex-1 flex justify-center">
-            <img
+            <Image
               src="/hero-illustration.svg"
               alt="Students preparing for exams"
+              width={400}
+              height={300}
               className="w-full max-w-md h-auto object-contain"
               style={{ minHeight: 240 }}
             />
