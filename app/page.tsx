@@ -247,14 +247,14 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">What Students Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-cream-100 rounded-xl p-6 shadow border border-gray-200 flex items-center gap-4">
-              <img src="/avatar1.png" alt="Student 1" className="w-14 h-14 rounded-full object-cover" />
+              <Image src="/avatar1.png" width={56} height={56} alt="Student 1" className="w-14 h-14 rounded-full object-cover" />
               <div>
                 <p className="font-semibold text-gray-900 mb-1">“Felt just like the real exam!”</p>
                 <span className="text-sm text-gray-600">Aman, AIR 123</span>
               </div>
             </div>
             <div className="bg-cream-100 rounded-xl p-6 shadow border border-gray-200 flex items-center gap-4">
-              <img src="/avatar2.png" alt="Student 2" className="w-14 h-14 rounded-full object-cover" />
+              <Image src="/avatar2.png" width={56} height={56} alt="Student 2" className="w-14 h-14 rounded-full object-cover" />
               <div>
                 <p className="font-semibold text-gray-900 mb-1">“Helped me boost my score!”</p>
                 <span className="text-sm text-gray-600">Priya, NEET Topper</span>
