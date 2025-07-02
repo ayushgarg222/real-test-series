@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import CohortCard from "@/components/ui/CohortCard";
 
 const tutorialSteps = [
@@ -34,54 +33,14 @@ const tutorialSteps = [
 ];
 
 export default function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 3);
+      setActiveStep((prev) => (prev + 1) % 3);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
-  const testimonials = [
-    {
-      name: "Rahul Sharma",
-      role: "NEET 2024 Aspirant",
-      image: "/testimonials/rahul.jpg",
-      quote: "Real Test Series helped me understand my strengths and weaknesses. The offline tests gave me the exact exam feel!"
-    },
-    {
-      name: "Priya Patel",
-      role: "JEE 2024 Aspirant",
-      image: "/testimonials/priya.jpg",
-      quote: "The comprehensive test series and detailed analysis helped me improve my rank significantly."
-    },
-    {
-      name: "Amit Kumar",
-      role: "NEET 2024 Aspirant",
-      image: "/testimonials/amit.jpg",
-      quote: "The dual mode testing option was perfect for my preparation. I could practice both online and offline!"
-    }
-  ];
-
-  const freeTests = [
-    {
-      title: "NEET Full Length Test",
-      description: "Experience a complete NEET mock test with detailed analysis and performance insights. Perfect for understanding the exam pattern and your current preparation level.",
-      link: "/register?test=neet-free",
-    },
-    {
-      title: "JEE Main Practice Test",
-      description: "Get a feel of JEE Main with our specially designed practice test and solutions. Includes comprehensive analysis and subject-wise performance breakdown.",
-      link: "/register?test=jee-free",
-    },
-    {
-      title: "Subject-wise Assessment",
-      description: "Choose your subject and take a focused test to identify your strengths and areas for improvement. Get detailed solutions and performance analytics.",
-      link: "/register?test=subject-free",
-    },
-  ];
 
   return (
     <main className="min-h-screen bg-cream-50">
