@@ -98,7 +98,7 @@ export default function FAQ() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                 activeCategory === category
                   ? 'bg-purple-600 text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-cream-100 border border-gray-200'
+                  : 'bg-white text-gray-700 hover:bg-whiteborder border-gray-200'
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}

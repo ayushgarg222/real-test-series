@@ -224,7 +224,7 @@ export default function Register() {
                         onChange={handleChange}
                       />
                     </div>
-                    <div className="bg-cream-100 p-2 rounded border border-gray-300">
+                    <div className="bg-whitep-2 rounded border border-gray-300">
                       <span className="text-lg font-mono text-gray-800">ABC123</span>
                     </div>
                   </div>

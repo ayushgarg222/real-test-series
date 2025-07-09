@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-cream-50">
       {/* Early Bird Registration Banner */}
-      <div className="mt-16 bg-gradient-to-r from-purple-600 to-purple-700 text-white py-3 px-4 text-center shadow-sm rounded-b-xl border-b border-purple-800">
+      <div className="mt-16 bg-[#5c3bfe] text-white py-3 px-4 text-center shadow-sm rounded-b-xl border-b">
         <p className="text-sm font-semibold">
           🎉 Early Bird Registration Open! Get 20% off on all test series. Limited time offer.
         </p>
@@ -208,60 +208,14 @@ export default function Home() {
                 onClick={() => setActiveStep(idx)}
                 className={`text-left rounded-xl px-6 py-5 transition-all duration-200 shadow-sm border-2 ${
                   activeStep === idx
-                    ? 'bg-cream-100 border-purple-400 shadow-lg dark:bg-gray-800'
+                    ? 'bg-whiteborder-purple-400 shadow-lg dark:bg-gray-800'
                     : 'bg-white border-gray-200 hover:border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:hover:border-gray-600'
                 }`}
               >
-                <div className={`font-bold text-lg mb-1 ${activeStep === idx ? 'text-purple-700 dark:text-white' : 'text-gray-800 dark:text-gray-300'}`}>{step.title}</div>
+                <div className={`font-bold text-lg mb-1 ${activeStep === idx ? 'text-[#5c3bfe] dark:text-white' : 'text-gray-800 dark:text-gray-300'}`}>{step.title}</div>
                 <div className={`text-gray-600 text-base ${activeStep === idx ? 'font-medium dark:text-gray-100' : 'font-normal dark:text-gray-400'}`}>{step.description}</div>
               </button>
             ))}
-          </div>
-          {/* Video/Image Area */}
-          <div className="w-full md:w-1/2 flex items-center justify-center">
-            <div className="rounded-3xl shadow-xl border-2 border-gray-200 bg-white p-4 w-full max-w-xl aspect-video flex items-center justify-center dark:border-gray-700 dark:bg-gray-800">
-              {/* If you have a video, use video tag, else fallback to image */}
-              {tutorialSteps[activeStep].video ? (
-                <video
-                  key={tutorialSteps[activeStep].video}
-                  src={tutorialSteps[activeStep].video}
-                  controls
-                  className="rounded-2xl w-full h-full object-cover bg-cream-100 dark:bg-gray-900"
-                  poster={tutorialSteps[activeStep].image}
-                />
-              ) : (
-          <Image
-                  src={tutorialSteps[activeStep].image}
-                  alt={tutorialSteps[activeStep].title}
-                  width={400}
-                  height={225}
-                  className="rounded-2xl w-full h-full object-cover bg-cream-100 dark:bg-gray-900"
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section (shortened) */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-10">What Students Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-cream-100 rounded-xl p-6 shadow border border-gray-200 flex items-center gap-4">
-              <Image src="/avatar1.png" width={56} height={56} alt="Student 1" className="w-14 h-14 rounded-full object-cover" />
-              <div>
-                <p className="font-semibold text-gray-900 mb-1">“Felt just like the real exam!”</p>
-                <span className="text-sm text-gray-600">Aman, AIR 123</span>
-              </div>
-            </div>
-            <div className="bg-cream-100 rounded-xl p-6 shadow border border-gray-200 flex items-center gap-4">
-              <Image src="/avatar2.png" width={56} height={56} alt="Student 2" className="w-14 h-14 rounded-full object-cover" />
-              <div>
-                <p className="font-semibold text-gray-900 mb-1">“Helped me boost my score!”</p>
-                <span className="text-sm text-gray-600">Priya, NEET Topper</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -275,7 +229,7 @@ export default function Home() {
           <p className="text-xl mb-8">
             Join thousands of successful students. Enroll in our test series today!
           </p>
-          <Link href="/register" className="bg-white text-purple-700 hover:bg-cream-100 px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+          <Link href="/register" className="bg-white text-[#5c3bfe] hover:bg-whitepx-8 p-4 rounded-lg font-bold text-lg shadow-lg transition-all duration-300 transform hover:scale-105">
             Enroll Now
           </Link>
     </div>
