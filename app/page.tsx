@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-700 to-purple-800 text-white">
+      <section className="py-20 bg-[#5C3BFE] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">
             Ready to Ace Your Exam?
