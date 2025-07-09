@@ -42,9 +42,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-white dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">
+                <a href="mailto:support@pw.live" className="text-white dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">
                   Contact Us
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/terms" className="text-white dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400">
