@@ -197,29 +197,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Step-by-Step Tutorial Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-          {/* Stepper */}
-          <div className="w-full md:w-1/2 flex flex-col gap-6">
-            {tutorialSteps.map((step, idx) => (
-              <button
-                key={step.title}
-                onClick={() => setActiveStep(idx)}
-                className={`text-left rounded-xl px-6 py-5 transition-all duration-200 shadow-sm border-2 ${
-                  activeStep === idx
-                    ? 'bg-whiteborder-purple-400 shadow-lg dark:bg-gray-800'
-                    : 'bg-white border-gray-200 hover:border-gray-300 dark:bg-gray-900 dark:border-gray-700 dark:hover:border-gray-600'
-                }`}
-              >
-                <div className={`font-bold text-lg mb-1 ${activeStep === idx ? 'text-[#5c3bfe] dark:text-white' : 'text-gray-800 dark:text-gray-300'}`}>{step.title}</div>
-                <div className={`text-gray-600 text-base ${activeStep === idx ? 'font-medium dark:text-gray-100' : 'font-normal dark:text-gray-400'}`}>{step.description}</div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action Section */}
       <section className="py-20 bg-gradient-to-r from-purple-700 to-purple-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
