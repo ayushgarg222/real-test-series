@@ -140,7 +140,7 @@ export default function Info() {
         <div className="mt-16 text-center">
           <Link
             href="/register"
-            className="inline-block bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors duration-200 shadow-md"
+            className="inline-block bg-[#5C3BFE] text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-[#4b2fd6] transition-colors duration-200 shadow-md"
           >
             Start Your Journey
           </Link>

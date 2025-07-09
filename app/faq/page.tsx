@@ -155,8 +155,8 @@ export default function FAQ() {
             Still have questions? We're here to help!
           </p>
           <a
-            href="/contact"
-            className="inline-block bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors duration-200 shadow-md"
+            href="mailto:support@pw.live"
+            className="inline-block bg-[#5C3BFE] text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-[#4b2fd6] transition-colors duration-200 shadow-md"
           >
             Contact Support
           </a>
