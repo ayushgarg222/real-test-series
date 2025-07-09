@@ -47,7 +47,7 @@ export default function Home() {
       {/* Early Bird Registration Banner */}
       <div className="mt-16 bg-[#5c3bfe] text-white py-3 px-4 text-center shadow-sm rounded-b-xl border-b">
         <p className="text-sm font-semibold">
-          🎉 Early Bird Registration Open! Get 20% off on all test series. Limited time offer.
+          🎉 Early Bird Registration Open! Limited time offer.
         </p>
       </div>
 
